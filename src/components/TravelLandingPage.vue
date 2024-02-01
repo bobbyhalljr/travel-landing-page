@@ -8,7 +8,7 @@ const showModal = ref(false)
 
 <template>
   
-  <div class="flex relative w-screen h-screen flex-col md:flex-row">
+  <div class="flex relative w-screen overflow-x-hidden h-screen flex-col md:flex-row">
     <ul class="flex md:justify-evenly justify-between w-[80%] p-3 md:w-[40%] text-lg bg-[#611818]/75 mx-auto md:p-4 rounded-lg md:max-w-[90%] z-30 absolute top-0 left-0 right-0 items-center text-white space-x-4 my-4 md:my-8">
       <li class="mx-2 md:hidden block cursor-pointer hover:text-gray-100/70"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></li>
       <li class="mx-2 hidden md:block cursor-pointer hover:text-gray-100/70">Explore</li>
