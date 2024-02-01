@@ -46,20 +46,20 @@ To run the project locally, follow these steps:
 
 ## Features
 
-- A Modal with blog posts or information.
-- A modal with paginated blog posts with 3 blog posts.
-- Added image optimization with vite plugin image optimizer.
+- A Modal with 3 sample paginated blog posts.
+- Image optimization with vite plugin image optimizer.
 
 ## What I would add given more time
 
-- **Drop down menu for mobile devices**: I implemented a button to push to show/hide the mobile navigation bar.
+- **Drop down menu for mobile devices**: I would implement a button to push to show/hide the mobile side navigation.
 
-- **Search functionality**: I implemented a search icon so that when a user clicks on it a modal would pop up with suggested search terms.
+- **Search functionality**: I would implement search functionality so that when a user clicks on the search icon a modal would pop up with suggested search terms. 
 
 
 ## Contact Information
 
-- **Your Name**: Bobby Hall
+Bobby Hall
+
 - **Email**: Bobbyhalljrcs@gmail.com
 - **LinkedIn**: https://linkedin.com/in/bobbyhalljr
 - **Personal Website**: https://bobbyhall.dev
