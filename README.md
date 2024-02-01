@@ -6,8 +6,8 @@ I'm excited to submit my Coding Challenge project for your review. Below are the
 
 ## Project Details
 
-- **GitHub Repository**: [Your GitHub Repository Link](https://github.com/bobbyhalljr/travel-landing-page)
-- **Live Demo**: [FunVueChallenge Live Demo](https://your-live-demo-link.com)
+- **GitHub Repository**: [GitHub Repository Link](https://github.com/bobbyhalljr/travel-landing-page)
+- **Live Demo**: [Live Demo](https://travel-landing-page-01.vercel.app/)
 
 ## Getting Started
 
