@@ -5,87 +5,39 @@ const props = defineProps({
 </script>
 
 <template>
-  <Transition name="modal">
-    <div v-if="show" class="modal-mask">
-      <div class="modal-container">
-        <div class="modal-header">
+  <Transition 
+    enter-active-class="transition ease-out duration-300 transform"
+    enter-from-class="opacity-0"
+    enter-to-class="opacity-100"
+    leave-active-class="transition ease-in duration-300 transform"
+    leave-from-class="opacity-100"
+    leave-to-class="opacity-0"
+    name="modal">
+
+    <div v-if="show" class="fixed z-[9998] w-full h-full bg-[rgba(0,0,0,0.5)] flex transition-opacity duration-[0.4s] ease-[ease] left-0 top-0">
+      <div class="w-[580px] mx-4 md:ml-32 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.33)] transition-all duration-[0.4s] ease-[ease] m-auto px-[30px] py-5 rounded-sm">
+        <div class="text-[#611818] mt-0">
+            <button
+              class="float-right"
+              @click="$emit('close')"
+            >
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.47211 6.08565L13.3347 0L14.8426 1.44954L8.93825 7.31805L15 13.1986L13.4303 14.8552L7.65339 8.91838L1.751 15L0.129482 13.4359C2.12151 11.4596 4.05777 9.55167 6.04781 7.58745L0 1.65259L1.55378 0L7.47211 6.08565Z" fill="#611818"/>
+            </svg>
+            </button>
           <slot name="header">default header</slot>
         </div>
 
-        <div class="modal-body">
+        <div class="mx-0 my-5">
           <slot name="body">default body</slot>
         </div>
 
         <div class="modal-footer">
           <slot name="footer">
             default footer
-            <button
-              class="modal-default-button"
-              @click="$emit('close')"
-            >OK</button>
           </slot>
         </div>
       </div>
     </div>
   </Transition>
 </template>
-
-<style>
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  transition: opacity 0.3s ease;
-}
-
-.modal-container {
-  width: 300px;
-  margin: auto;
-  padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-  transition: all 0.3s ease;
-}
-
-.modal-header h3 {
-  margin-top: 0;
-  color: #42b983;
-}
-
-.modal-body {
-  margin: 20px 0;
-}
-
-.modal-default-button {
-  float: right;
-}
-
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
-
-.modal-enter-from {
-  opacity: 0;
-}
-
-.modal-leave-to {
-  opacity: 0;
-}
-
-.modal-enter-from .modal-container,
-.modal-leave-to .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-</style>
