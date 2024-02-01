@@ -48,6 +48,13 @@ To run the project locally, follow these steps:
 ## Features
 
 - A Modal with blog posts or information.
+- Added image optimization with vite plugin image optimizer
+
+## What I would add given more time
+
+- **Drop down menu for mobile devices**: I implemented a button to push to show/hide the mobile navigation bar.
+
+- **Search functionality**: I implemented a search icon so that when a user clicks on it a modal would pop up with suggested search terms.
 
 
 ## Contact Information
