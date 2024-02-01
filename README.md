@@ -47,7 +47,8 @@ To run the project locally, follow these steps:
 ## Features
 
 - A Modal with blog posts or information.
-- Added image optimization with vite plugin image optimizer
+- A modal with paginated blog posts with 3 blog posts.
+- Added image optimization with vite plugin image optimizer.
 
 ## What I would add given more time
 

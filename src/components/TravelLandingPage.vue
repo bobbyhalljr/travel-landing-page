@@ -1,9 +1,9 @@
 <script setup>
-import image from "/trees.png"
-import Modal from "../components/Modal.vue"
-import { ref } from 'vue'
+  import image from "/trees.png"
+  import Modal from "../components/Modal.vue"
+  import { ref } from 'vue'
 
-const showModal = ref(false)
+  const showModal = ref(false)
 </script>
 
 <template>
@@ -23,7 +23,8 @@ const showModal = ref(false)
     </div>
 
     <div class="mt-auto absolute bottom-80 md:bottom-60 z-20 left-0 ml-12 w-full md:left-40">
-      <h1 class="text-7xl  md:text-[6rem] font-heading lg:text-[10rem] font-bold text-white">Explore</h1>
+     
+        <h1 class="text-7xl fadeIn md:text-[6rem] font-heading lg:text-[10rem] font-bold text-white">Explore</h1>
       <div>
         <!-- button trigger for modal -->
         <button type="button" id="show-modal" @click="showModal = true" class="flex font-medium font-body tracking-wide text-white py-2 items-center hover:bg-gray-50/20 px-2 rounded-lg">
@@ -94,3 +95,12 @@ const showModal = ref(false)
   </div>
 
 </template>
+
+
+<style scoped>
+body {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+} 
+</style>

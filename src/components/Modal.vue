@@ -1,7 +1,49 @@
 <script setup>
+import { ref } from 'vue'
+
 const props = defineProps({
   show: Boolean
 })
+
+// Travel blog array to store static blog posts
+const travelBlogPosts = ref([
+  {
+    id: 0,
+    title: 'Discovering Hidden Gems: Off the Beaten Path Adventures',
+    author: 'Adventurous Explorer',
+    paragraph: 'Embark on a journey to uncover hidden gems and off-the-beaten-path destinations. From secluded beaches to remote mountain villages, this travel adventure promises a unique and authentic experience. Get ready to step outside your comfort zone and explore the extraordinary.'
+  },
+  {
+    id: 1,
+    title: 'Culinary Delights Around the World: A Foodie\’s Travel Diary',
+    author: 'Gastronomy Enthusiast',
+    paragraph: 'Join us on a culinary journey across continents as we explore the diverse and mouth-watering dishes that define different cultures. From street food markets to fine dining establishments, this travel diary will inspire your taste buds and ignite your passion for global gastronomy.'
+  },
+  {
+    id: 2,
+    title: 'Sustainable Travel: Nurturing Nature and Cultures',
+    author: 'Eco-Travel Advocate',
+    paragraph: 'In this blog post, we shed light on the importance of sustainable travel practices. Discover eco-friendly accommodations, responsible tourism initiatives, and ways to minimize your carbon footprint while exploring the world. Let\'s travel responsibly, respecting both nature and local communities.'
+  }
+])
+
+const currentIndex = ref(0);
+
+const currentPost = ref(travelBlogPosts.value[currentIndex.value]);
+
+const nextPost = () => {
+  if (currentIndex.value < travelBlogPosts.value.length - 1) {
+    currentIndex.value += 1;
+    currentPost.value = travelBlogPosts.value[currentIndex.value];
+  }
+};
+
+const prevPost = () => {
+  if (currentIndex.value > 0) {
+    currentIndex.value -= 1;
+    currentPost.value = travelBlogPosts.value[currentIndex.value];
+  }
+};
 </script>
 
 <template class="h-96">
@@ -16,13 +58,23 @@ const props = defineProps({
   >
     <div v-if="show" class="fixed z-[9998] w-screen md:w-full overflow-y-scroll py-4 h-full bg-[rgba(0,0,0,0.3)] flex transition-opacity duration-[0.4s] ease-[ease] left-0 top-0">
       <div class="w-[580px] h-auto mx-4 md:ml-32 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.33)] transition-all duration-[0.4s] ease-[ease] m-auto px-[30px] py-5 rounded-sm">
-        <div class="text-[#611818] flex items-center justify-between">
+        <div class="text-primary flex items-center justify-between">
           <!-- UI for the header of the modal -->
           <slot name="header">
-            <h1 class="text-[#611818] text-4xl font-heading font-semibold">Explore</h1>
-              <div class="flex justify-center ml-auto px-4 space-x-2 items-center">
-                <p class="bg-[#611818] w-6 h-6 md:w-8 md:h-8 flex justify-center items-center text-white rounded-full px-3 lg:p-4">1</p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right w-8 h-8 hover:text-[#611818]/50 cursor-pointer"><path d="m9 18 6-6-6-6"/></svg>
+              <h1 class="text-primary text-4xl font-heading font-semibold">Explore</h1>
+              <!-- pagination for the blog posts -->
+              <div class="flex justify-center ml-auto md:mr-8 mr-0 px-4 space-x-2 items-center">                
+                <div class="flex justify-between items-center mt-4" v-if="travelBlogPosts.length > 1">
+                  <button @click="prevPost" :disabled="currentIndex === 0" class="mx-2" :class="{ 'cursor-not-allowed': currentIndex === 0 }">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left w-8 h-8 hover:text-primary/50 cursor-pointer"><path d="m15 18-6-6 6-6"/></svg>
+                  </button>
+
+                  <div class="text-lg bg-primary w-8 h-8 flex justify-center items-center text-white rounded-full px-3 lg:p-4">{{ currentIndex + 1 }}</div>
+
+                  <button @click="nextPost" :disabled="currentIndex === travelBlogPosts.length - 1" class="mx-2" :class="{ 'cursor-not-allowed': currentIndex === travelBlogPosts.length - 1 }">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right w-8 h-8 hover:text-primary/50 cursor-pointer"><path d="m9 18 6-6-6-6"/></svg>
+                  </button>
+                </div>
               </div>
             <button
             class=""
@@ -38,16 +90,22 @@ const props = defineProps({
       <!-- UI for the body of the modal -->
       <div class="mx-0 my-6">
         <slot class="transition-opacity ease-in duration-600 delay-600" name="body">
-          <h1 class="mt-8 font-black font-body text-2xl mb-6">Gobustan: A Natrual Wonder Hidden in the Heart of the Caucasus</h1>
-          <p class="text-gray-600 font-body my-6">By: John Doe</p>
-          <p class="max-w-md font-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+          <div class="container mx-auto p-4">
+            <!-- Looping over posts and displaying a single post at a time -->
+            <article v-if="currentPost !== null" :key="currentPost.id" class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">{{ currentPost.title }}</h2>
+              <p class="text-gray-600 my-6"><em>Author: {{ currentPost.author }}</em></p>
+              <p class="text-lg">{{ currentPost.paragraph }}</p>
+            </article>
+
+          </div>
         </slot>
       </div>
       
       <!-- UI for the footer of the modal -->
         <div class="modal-footer">
           <slot name="footer">
-            <button class="uppercase text-white px-8 py-3 my-6 bg-gradient-to-r from-background to-background/50">
+            <button class="uppercase text-white px-8 py-3 my-6 bg-gradient-to-r from-primary to-primary/70">
               read more
             </button>
           </slot>

@@ -6,8 +6,18 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadeIn: {
+          '0%': {
+            opacity: 0
+          },
+          '50%': {
+            opacity: 1
+          },
+        }
+      },
       colors: {
-        background: "#611818"
+        primary: "#611818"
       },
       fontFamily: {
         heading: ['"Didot"', 'sans-serif'],
