@@ -4,7 +4,7 @@ const props = defineProps({
 })
 </script>
 
-<template>
+<template class="h-96">
     <Transition
     enter-active-class="transition-transform-goo-enter"
     enter-from-class="opacity-0 scale-0.5 gooey"
@@ -16,12 +16,12 @@ const props = defineProps({
   >
     <div v-if="show" class="fixed z-[9998] w-screen md:w-full overflow-y-scroll py-4 h-full bg-[rgba(0,0,0,0.3)] flex transition-opacity duration-[0.4s] ease-[ease] left-0 top-0">
       <div class="w-[580px] h-auto mx-4 md:ml-32 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.33)] transition-all duration-[0.4s] ease-[ease] m-auto px-[30px] py-5 rounded-sm">
-        <div class="text-[#611818] flex py-4 items-center justify-between">
+        <div class="text-[#611818] flex items-center justify-between">
           <!-- UI for the header of the modal -->
           <slot name="header">
-            <h1 class="text-[#611818] text-4xl font-semibold">Explore</h1>
-              <div class="flex justify-center ml-auto mr-8 space-x-2 items-center">
-                <p class="bg-[#611818] w-6 h-6 md:w-8 md:h-8 flex justify-center items-center text-white rounded-full p-3 lg:p-4">1</p>
+            <h1 class="text-[#611818] text-4xl font-heading font-semibold">Explore</h1>
+              <div class="flex justify-center ml-auto px-4 space-x-2 items-center">
+                <p class="bg-[#611818] w-6 h-6 md:w-8 md:h-8 flex justify-center items-center text-white rounded-full px-3 lg:p-4">1</p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right w-8 h-8 hover:text-[#611818]/50 cursor-pointer"><path d="m9 18 6-6-6-6"/></svg>
               </div>
             <button
@@ -36,11 +36,11 @@ const props = defineProps({
       </div>
       
       <!-- UI for the body of the modal -->
-      <div class="mx-0 my-5">
+      <div class="mx-0 my-6">
         <slot class="transition-opacity ease-in duration-600 delay-600" name="body">
-          <h1 class="mt-8 font-black text-2xl md:text-5xl lg:text-6xl mb-6">Gobustan: A Natrual Wonder Hidden in the Heart of the Caucasus</h1>
-          <p class="text-gray-600 my-6">By: John Doe</p>
-          <p class="max-w-md">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+          <h1 class="mt-8 font-black font-body text-2xl mb-6">Gobustan: A Natrual Wonder Hidden in the Heart of the Caucasus</h1>
+          <p class="text-gray-600 font-body my-6">By: John Doe</p>
+          <p class="max-w-md font-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
         </slot>
       </div>
       

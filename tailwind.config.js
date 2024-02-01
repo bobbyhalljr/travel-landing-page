@@ -9,6 +9,10 @@ export default {
       colors: {
         background: "#611818"
       },
+      fontFamily: {
+        heading: ['"Didot"', 'sans-serif'],
+        body: ['"Lato', 'sans-serif']
+      }
     },
   },
   plugins: [],

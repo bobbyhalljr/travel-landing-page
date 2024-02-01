@@ -23,10 +23,10 @@ const showModal = ref(false)
     </div>
 
     <div class="mt-auto absolute bottom-80 md:bottom-60 z-20 left-0 ml-12 w-full md:left-40">
-      <h1 class="text-7xl  md:text-[8rem] lg:text-[10rem] font-bold text-white">Explore</h1>
+      <h1 class="text-7xl  md:text-[6rem] font-heading lg:text-[10rem] font-bold text-white">Explore</h1>
       <div>
         <!-- button trigger for modal -->
-        <button type="button" id="show-modal" @click="showModal = true" class="flex font-medium tracking-wide text-white py-2 items-center hover:bg-gray-50/20 px-2 rounded-lg">
+        <button type="button" id="show-modal" @click="showModal = true" class="flex font-medium font-body tracking-wide text-white py-2 items-center hover:bg-gray-50/20 px-2 rounded-lg">
           <svg class="w-8 mr-4 h-8" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0 21.5C0 9.62588 9.62588 0 21.5 0C27.2022 0 32.6708 2.26517 36.7028 6.2972C40.7348 10.3292 43 15.7978 43 21.5C43 33.3741 33.3741 43 21.5 43C9.62588 43 0 33.3741 0 21.5ZM22.4673 22.1386H29.3045V20.3237H22.4673V13.2142H20.5327V20.3237H13.6955V22.1386H20.5327V29.3092H22.4673V22.1386Z" fill="white"/>
           </svg>

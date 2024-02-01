@@ -1,5 +1,3 @@
-# Challenge Submission
-
 Hello Udundi team!
 
 I'm excited to submit my Coding Challenge project for your review. Below are the details and links you need to explore the landing page. I had a blast working on this challenge, and I hope you enjoy checking it out!
@@ -8,6 +6,23 @@ I'm excited to submit my Coding Challenge project for your review. Below are the
 
 - **GitHub Repository**: [GitHub Repository Link](https://github.com/bobbyhalljr/travel-landing-page)
 - **Live Demo**: [Live Demo](https://travel-landing-page-01.vercel.app/)
+
+## Screenshots
+
+- **Dekstop View**: 
+
+![alt text](/public/screenshot-desktop.png "Title")
+
+- **Dekstop View With modal open**: 
+
+![alt text](/public/screenshot-modal-open.png "Title")
+
+- **Mobile View**: 
+
+![alt text](/public/screenshot-mobile.png "Title")
+
+- **Mobile View With modal open**: 
+![alt text](/public/screenshot-mobile-open.png "Title")
 
 ## Getting Started
 
