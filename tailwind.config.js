@@ -20,7 +20,7 @@ export default {
         primary: "#611818"
       },
       fontFamily: {
-        heading: ['"Didot"', 'sans-serif'],
+        heading: ['"lato"', 'sans-serif'],
         body: ['"Lato', 'sans-serif']
       }
     },

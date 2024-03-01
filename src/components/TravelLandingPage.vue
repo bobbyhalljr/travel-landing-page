@@ -1,5 +1,5 @@
 <script setup>
-  import image from "/trees.png"
+  import image from "/bud.jpg"
   import Modal from "../components/Modal.vue"
   import { ref } from 'vue'
 
@@ -9,25 +9,25 @@
 <template>
   
   <div class="flex relative w-screen overflow-x-hidden h-screen flex-col md:flex-row">
-    <ul class="flex md:justify-evenly justify-between w-[80%] p-3 md:w-[40%] text-lg bg-[#611818]/75 mx-auto md:p-4 rounded-lg md:max-w-[90%] z-30 absolute top-0 left-0 right-0 items-center text-white space-x-4 my-4 md:my-8">
+    <ul class="flex md:justify-evenly justify-between w-[80%] p-3 md:w-[40%] text-lg bg-emerald-600/75 mx-auto md:p-4 rounded-lg md:max-w-[90%] z-30 absolute top-0 left-0 right-0 items-center text-white space-x-4 my-4 md:my-8">
       <li class="mx-2 md:hidden block cursor-pointer hover:text-gray-100/70"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></li>
-      <li class="mx-2 hidden md:block cursor-pointer hover:text-gray-100/70">Explore</li>
-      <li class="mx-2 hidden md:block cursor-pointer hover:text-gray-100/70">Plan</li>
-      <li class="mx-2 hidden md:block cursor-pointer hover:text-gray-100/70">Discover</li>
-      <li class="mx-2 hidden md:block cursor-pointer hover:text-gray-100/70">Stay</li>
+      <li class="mx-2 hidden md:block cursor-pointer hover:text-gray-100/70">Shop</li>
+      <li class="mx-2 hidden md:block cursor-pointer hover:text-gray-100/70">About</li>
+      <li class="mx-2 hidden md:block cursor-pointer hover:text-gray-100/70">Contact</li>
+      <li class="mx-2 hidden md:block cursor-pointer hover:text-gray-100/70">Lab Tests</li>
       <li class="mx-2 cursor-pointer hover:text-gray-100/70"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></li>
     </ul>
     <!-- div for the responsive sidebar -->
-    <div class="relative bg-[#611818] w-full h-24 hidden lg:block lg:w-[380px] md:h-screen">
+    <div class="relative bg-emerald-600 w-full h-24 hidden lg:block lg:w-[380px] md:h-screen">
       
     </div>
 
     <div class="mt-auto absolute bottom-80 md:bottom-60 z-20 left-0 ml-12 w-full md:left-40">
      
-        <h1 class="text-7xl fadeIn md:text-[6rem] font-heading lg:text-[10rem] font-bold text-white">Explore</h1>
+      <h1 class="text-5xl fadeIn md:text-[4rem] font-heading max-w-3xl lg:text-[8rem] font-bold text-white">Best Cannabis Blog</h1>
       <div>
         <!-- button trigger for modal -->
-        <button type="button" id="show-modal" @click="showModal = true" class="flex font-medium font-body tracking-wide text-white py-2 items-center hover:bg-gray-50/20 px-2 rounded-lg">
+        <button type="button" id="show-modal" @click="showModal = true" class="flex font-medium mt-8 text-xl font-body tracking-wide text-white py-2 items-center hover:bg-gray-50/20 px-2 rounded-lg">
           <svg class="w-8 mr-4 h-8" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0 21.5C0 9.62588 9.62588 0 21.5 0C27.2022 0 32.6708 2.26517 36.7028 6.2972C40.7348 10.3292 43 15.7978 43 21.5C43 33.3741 33.3741 43 21.5 43C9.62588 43 0 33.3741 0 21.5ZM22.4673 22.1386H29.3045V20.3237H22.4673V13.2142H20.5327V20.3237H13.6955V22.1386H20.5327V29.3092H22.4673V22.1386Z" fill="white"/>
           </svg>
@@ -50,7 +50,7 @@
 
     <!-- Image and social icons -->
     <div class="w-screen">
-      <img class="h-screen object-cover bg-cover bg-center brightness-75 z-10 w-screen" :src="image" alt="trees"/>
+      <img class="h-screen object-cover brightness-50 bg-cover bg-center z-10 w-screen" :src="image" alt="trees"/>
 
       <div class="absolute bottom-40 right-10 space-y-4">
 
